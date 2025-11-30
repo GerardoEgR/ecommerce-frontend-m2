@@ -1,0 +1,8 @@
+.card-img-top {
+  height: 250px;
+  object-fit: cover; /* Evita que la imagen se deforme */
+}
+.card:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+  transition: transform 0.3s ease;
+}
