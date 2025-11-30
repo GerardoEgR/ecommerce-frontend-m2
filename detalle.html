@@ -1,62 +1,101 @@
-<main class="container my-5">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a href="index.html" class="text-dark">Inicio</a>
-      </li>
-      <li class="breadcrumb-item active">Snapback LA Black</li>
-    </ol>
-  </nav>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detalle del Producto | UrbanCap</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="index.html">🧢 UrbanCap</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link d-flex align-items-center"
+                  href="carrito.html"
+                  title="Ver carrito"
+                >
+                  🛒
+                  <span
+                    id="contador-carrito"
+                    class="badge bg-warning text-dark ms-1"
+                    >0</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-  <div class="row align-items-center">
-    <div class="col-md-6 mb-4 mb-md-0">
-      <img
-        src="https://via.placeholder.com/600x600?text=Vista+Frontal"
-        class="img-fluid rounded shadow"
-        alt="Detalle Jockey"
-      />
-      <div class="row mt-2">
-        <div class="col-3">
+    <main class="container my-5">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html" class="text-dark">Inicio</a>
+          </li>
+          <li class="breadcrumb-item active" id="detalle-nombre-breadcrumb">
+            Cargando...
+          </li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
           <img
-            src="https://via.placeholder.com/100"
-            class="img-fluid rounded border"
-            alt="Thumb"
+            src="https://via.placeholder.com/600x600?text=Cargando+Imagen"
+            class="img-fluid rounded shadow"
+            alt="Detalle"
+            id="detalle-imagen"
           />
         </div>
-        <div class="col-3">
-          <img
-            src="https://via.placeholder.com/100"
-            class="img-fluid rounded"
-            alt="Thumb"
-          />
+
+        <div class="col-md-6">
+          <span class="badge bg-dark mb-2" id="detalle-categoria"
+            >Cargando...</span
+          >
+          <h1 class="display-5 fw-bold" id="detalle-titulo">Cargando...</h1>
+          <h2 class="text-secondary mb-4" id="detalle-precio">...</h2>
+
+          <p class="lead" id="detalle-descripcion">Cargando descripción...</p>
+
+          <div class="d-grid gap-2 col-lg-6">
+            <button
+              class="btn btn-dark btn-lg"
+              type="button"
+              id="btn-agregar-detalle"
+            >
+              Añadir al Carrito
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
-    <div class="col-md-6">
-      <span class="badge bg-dark mb-2">Best Seller</span>
-      <h1 class="display-5 fw-bold">Snapback LA Black</h1>
-      <h2 class="text-secondary mb-4">$24.990</h2>
-
-      <p class="lead">
-        El ícono de la cultura urbana. Confeccionada con 6 paneles reforzados y
-        visera plana rígida que mantiene su forma.
-      </p>
-
-      <ul class="list-unstyled text-muted mb-4">
-        <li>✔️ Ajuste: Snapback plástico (55-60cm)</li>
-        <li>✔️ Material: 100% Algodón Premium</li>
-        <li>✔️ Visera: Plana con sticker original</li>
-      </ul>
-
-      <div class="d-grid gap-2 col-lg-6">
-        <button class="btn btn-dark btn-lg" type="button">
-          Añadir al Carrito
-        </button>
-        <button class="btn btn-outline-secondary" type="button">
-          Ver tabla de tallas
-        </button>
+    <footer class="bg-dark text-white text-center py-4 mt-auto fixed-bottom">
+      <div class="container">
+        <p class="mb-0">&copy; 2024 UrbanCap Store. Estilo Urbano.</p>
       </div>
-    </div>
-  </div>
-</main>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

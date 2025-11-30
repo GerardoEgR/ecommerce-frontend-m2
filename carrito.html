@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UrbanCap | Tu estilo, tu cabeza</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrito de Compras | UrbanCap</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -26,7 +26,6 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <!-- link al carrito -->
                 <a
                   class="nav-link d-flex align-items-center"
                   href="carrito.html"
@@ -47,46 +46,51 @@
     </header>
 
     <main class="container my-5">
-      <section class="text-center p-5 mb-5 bg-light rounded-3 shadow-sm">
-        <h1 class="display-4 fw-bold">Streetwear Essentials</h1>
-        <p class="lead">
-          Desde Snapbacks clásicas hasta Dad Hats. Encuentra el fit perfecto.
-        </p>
-        <a href="#catalogo" class="btn btn-dark btn-lg">Ver Catálogo</a>
-      </section>
+      <h1 class="mb-4">Tu Carrito</h1>
 
-      <section id="catalogo">
-        <div class="row" id="contenedor-productos"></div>
-      </section>
-    </main>
-
-    <footer class="bg-dark text-white text-center py-4 mt-auto">
-      <div class="container">
-        <p class="mb-0">&copy; 2024 UrbanCap Store. Estilo Urbano.</p>
-        <small class="text-secondary">Envíos gratis sobre $50.000</small>
+      <div
+        id="carrito-vacio"
+        class="alert alert-info"
+        role="alert"
+        style="display: none"
+      >
+        Tu carrito está vacío.
+        <a href="index.html" class="alert-link">Ir al catálogo</a>.
       </div>
-    </footer>
 
-    <!-- Toasts Bootstrap -->
-    <div
-      aria-live="polite"
-      aria-atomic="true"
-      class="position-fixed top-0 end-0 p-3"
-      style="z-index: 1080"
-    >
-      <div id="cartToast" class="toast" role="alert" data-bs-delay="2000">
-        <div class="toast-header">
-          <strong class="me-auto">Tienda Online</strong>
-          <small>Ahora</small>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="toast"
-          ></button>
+      <div id="tabla-carrito" style="display: none">
+        <div class="table-responsive">
+          <table class="table align-middle">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th style="width: 120px">Cantidad</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cuerpo-carrito"></tbody>
+          </table>
         </div>
-        <div class="toast-body">Producto agregado al carrito 🛒</div>
+
+        <div class="d-flex justify-content-end">
+          <div class="text-end">
+            <p class="mb-1">Subtotal: <span id="subtotal">$0</span></p>
+            <p class="mb-1">Envío: <span id="envio">$0</span></p>
+            <h4 class="fw-bold">Total: <span id="total">$0</span></h4>
+            <div class="mt-3">
+              <button id="vaciar-carrito" class="btn btn-outline-danger me-2">
+                Vaciar carrito
+              </button>
+              <button id="comprar-carrito" class="btn btn-dark">
+                Continuar a pagar
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
 
     <!-- Modal Confirmar Compra -->
     <div
@@ -96,44 +100,41 @@
       aria-labelledby="confirmPurchaseLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header bg-dark text-white">
             <h5 class="modal-title" id="confirmPurchaseLabel">
-              Confirmar compra
+              Confirma tu Pago
             </h5>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
             ></button>
           </div>
-
-          <div class="modal-body">
-            ¿Estás seguro de que deseas finalizar la compra?
-          </div>
-
+          <div class="modal-body">"¡Gracias por tu compra! 🛍️"</div>
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-outline-secondary"
               data-bs-dismiss="modal"
             >
               Cancelar
             </button>
-            <button
-              id="confirmPurchaseBtn"
-              type="button"
-              class="btn btn-primary"
-            >
-              Sí, comprar
+            <button type="button" class="btn btn-dark" id="confirmPurchaseBtn">
+              Confirmar
             </button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Scripts -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto fixed-bottom">
+      <div class="container">
+        <p class="mb-0">&copy; 2024 UrbanCap Store. Estilo Urbano.</p>
+      </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
