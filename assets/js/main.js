@@ -185,13 +185,11 @@ function renderizarProductos() {
     contenedor.appendChild(div);
   });
 
-  // Delegación para botones "Agregar"
   contenedor.addEventListener("click", (e) => {
     const btn = e.target.closest(".btn-add");
     if (!btn) return;
     const id = parseInt(btn.dataset.id, 10);
     agregarAlCarrito(id, 1);
-    // feedback: pequeño toast/alert (simple)
     showToast("Producto agregado al carrito 🛒");
   });
 }
@@ -304,7 +302,7 @@ function renderizarCarrito() {
       const id = parseInt(e.target.dataset.id, 10);
       const cant = parseInt(e.target.value, 10) || 1;
       actualizarCantidad(id, cant);
-      renderizarCarrito(); // re-render para actualizar subtotales
+      renderizarCarrito(); // para actualizar subtotales
     });
   });
 
@@ -361,9 +359,6 @@ function confirmarCompraFinal() {
     bootstrap.Modal.getInstance(confirmPurchaseModal) ||
     new bootstrap.Modal(confirmPurchaseModal);
 
-  // if (!modal) {
-  //   modal = new bootstrap.Modal(modalEl);
-  // }
   modal.hide();
 
   vaciarCarrito();
